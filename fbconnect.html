@@ -1,0 +1,15 @@
+<head>
+  <title>fbconnect</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  {{#if currentUser}}
+  		<button class="connectFacebook">Connect to facebook</button>
+  {{else}}
+  		{{> loginButtons}}
+  {{/if}}
+</template>
