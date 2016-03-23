@@ -8,8 +8,18 @@
 
 <template name="hello">
   {{#if currentUser}}
-  		<button class="connectFacebook">Connect to facebook</button>
+		{{> login}}  		
   {{else}}
   		{{> loginButtons}}
   {{/if}}
+</template>
+
+<template name="login">
+    {{#if noFB}}
+    	<button class="connectFacebook btn btn-default"> Connect with Facebook</button>
+    {{else}}
+        {{currentUser.services.facebook.name}} -
+        {{currentUser.services.facebook.gender}}
+        <button id="logout">Logout</button>
+    {{/if}}
 </template>
